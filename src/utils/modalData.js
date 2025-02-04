@@ -23,8 +23,8 @@ export const getModalTitle = (modal) => {
       return i18n.t("table_width");
     case MODAL.LANGUAGE:
       return i18n.t("language");
-    case MODAL.SHARE:
-      return i18n.t("share");
+    case MODAL.SHORTCUTS:
+      return i18n.t("shortcuts");
     default:
       return "";
   }

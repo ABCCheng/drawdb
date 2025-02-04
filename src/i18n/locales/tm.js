@@ -71,7 +71,6 @@ const tamil = {
         storage_flushed: "சேமிப்பு கழிக்கப்பட்டது",
         help: "உதவி",
         shortcuts: "குறுக்குவழிகள்",
-        ask_on_discord: "Discord-ல் கேளுங்கள்",
         feedback: "கருத்து",
         no_changes: "மாற்றங்கள் இல்லை",
         loading: "ஏற்றுகிறது...",

@@ -1,58 +1,25 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, HashRouter } from "react-router-dom";
 import { useLayoutEffect } from "react";
 import Editor from "./pages/Editor";
-import Survey from "./pages/Survey";
-import BugReport from "./pages/BugReport";
-import Shortcuts from "./pages/Shortcuts";
-import Templates from "./pages/Templates";
-import LandingPage from "./pages/LandingPage";
 import SettingsContextProvider from "./context/SettingsContext";
 import { useSettings } from "./hooks";
-import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
     <SettingsContextProvider>
-      <BrowserRouter>
+      <HashRouter>
         <RestoreScroll />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
           <Route
-            path="/editor"
+            path="/"
             element={
               <ThemedPage>
                 <Editor />
               </ThemedPage>
             }
           />
-          <Route
-            path="/survey"
-            element={
-              <ThemedPage>
-                <Survey />
-              </ThemedPage>
-            }
-          />
-          <Route
-            path="/shortcuts"
-            element={
-              <ThemedPage>
-                <Shortcuts />
-              </ThemedPage>
-            }
-          />
-          <Route
-            path="/bug-report"
-            element={
-              <ThemedPage>
-                <BugReport />
-              </ThemedPage>
-            }
-          />
-          <Route path="/templates" element={<Templates />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </SettingsContextProvider>
   );
 }
@@ -61,7 +28,7 @@ function ThemedPage({ children }) {
   const { setSettings } = useSettings();
 
   useLayoutEffect(() => {
-    const theme = localStorage.getItem("theme");
+    const theme = localStorage.getItem("drawdb-theme");
     if (theme === "dark") {
       setSettings((prev) => ({ ...prev, mode: "dark" }));
       const body = document.body;

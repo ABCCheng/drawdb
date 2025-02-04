@@ -1,8 +1,8 @@
-import mysqlImage from "../assets/mysql-icon.png";
-import postgresImage from "../assets/postgres-icon.png";
-import sqliteImage from "../assets/sqlite-icon.png";
-import mariadbImage from "../assets/mariadb-icon.png";
-import mssqlImage from "../assets/mssql-icon.png";
+import mysqlImage from "/mysql-icon.png";
+import postgresImage from "/postgres-icon.png";
+import sqliteImage from "/sqlite-icon.png";
+import mariadbImage from "/mariadb-icon.png";
+import mssqlImage from "/mssql-icon.png";
 import i18n from "../i18n/i18n";
 import { DB } from "./constants";
 

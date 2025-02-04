@@ -491,7 +491,7 @@ export default function Canvas() {
     { passive: false },
   );
 
-  const theme = localStorage.getItem("theme");
+  const theme = localStorage.getItem("drawdb-theme");
 
   return (
     <div className="flex-grow h-full touch-none" id="canvas">

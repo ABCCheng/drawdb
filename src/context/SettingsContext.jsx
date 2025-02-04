@@ -20,14 +20,14 @@ export default function SettingsContextProvider({ children }) {
   const [settings, setSettings] = useState(defaultSettings);
 
   useEffect(() => {
-    const settings = localStorage.getItem("settings");
+    const settings = localStorage.getItem("drawdb-settings");
     if (settings) {
       setSettings(JSON.parse(settings));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("settings", JSON.stringify(settings));
+    localStorage.setItem("drawdb-settings", JSON.stringify(settings));
   }, [settings]);
 
   return (

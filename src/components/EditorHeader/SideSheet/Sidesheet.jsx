@@ -1,9 +1,9 @@
 import { SideSheet as SemiUISideSheet } from "@douyinfe/semi-ui";
 import { SIDESHEET } from "../../../data/constants";
 import { useSettings } from "../../../hooks";
-import timeLine from "../../../assets/process.png";
-import timeLineDark from "../../../assets/process_dark.png";
-import todo from "../../../assets/calendar.png";
+import timeLine from "/process.png";
+import timeLineDark from "/process_dark.png";
+import todo from "/calendar.png";
 import Timeline from "./Timeline";
 import Todo from "./Todo";
 import { useTranslation } from "react-i18next";

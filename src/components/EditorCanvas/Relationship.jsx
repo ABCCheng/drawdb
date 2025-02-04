@@ -20,7 +20,7 @@ export default function Relationship({ data }) {
   const { selectedElement, setSelectedElement } = useSelect();
   const { t } = useTranslation();
 
-  const theme = localStorage.getItem("theme");
+  const theme = localStorage.getItem("drawdb-theme");
 
   const pathRef = useRef();
   const labelRef = useRef();

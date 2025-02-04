@@ -64,7 +64,6 @@ const uk = {
     storage_flushed: "Сховище очищено",
     help: "Допомога",
     shortcuts: "Гарячі клавіші",
-    ask_on_discord: "Запитайте нас на Discord",
     feedback: "Відгук",
     no_changes: "Змін немає",
     loading: "Завантаження...",

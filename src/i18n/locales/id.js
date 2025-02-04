@@ -73,7 +73,6 @@ const id = {
     storage_flushed: "Penyimpanan dibersihkan",
     help: "Bantuan",
     shortcuts: "Pintasan",
-    ask_on_discord: "Tanya kami di Discord",
     feedback: "Umpan balik",
     no_changes: "Tidak ada perubahan",
     loading: "Memuat...",

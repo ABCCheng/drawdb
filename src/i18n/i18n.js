@@ -84,6 +84,10 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    detection: {
+      // 自定义 localStorage 的 key
+      lookupLocalStorage: "drawdb-i18nextLng",
+    },
     resources: {
       en,
       zh,

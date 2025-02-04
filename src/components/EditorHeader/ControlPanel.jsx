@@ -9,10 +9,9 @@ import {
   IconUndo,
   IconRedo,
   IconEdit,
-  IconShareStroked,
 } from "@douyinfe/semi-icons";
 import { Link, useNavigate } from "react-router-dom";
-import icon from "../../assets/icon_dark_64.png";
+import icon from "/icon_dark_64.png";
 import {
   Button,
   Divider,
@@ -73,6 +72,7 @@ import { jsonToMermaid } from "../../utils/exportAs/mermaid";
 import { isRtl } from "../../i18n/utils/rtl";
 import { jsonToDocumentation } from "../../utils/exportAs/documentation";
 import { IdContext } from "../Workspace";
+import { shortcuts } from "../../data/shortcuts";
 
 export default function ControlPanel({
   diagramId,
@@ -1261,7 +1261,7 @@ export default function ControlPanel({
               if (body.hasAttribute("theme-mode")) {
                 body.setAttribute("theme-mode", "light");
               }
-              localStorage.setItem("theme", "light");
+              localStorage.setItem("drawdb-theme", "light");
               setSettings((prev) => ({ ...prev, mode: "light" }));
             },
           },
@@ -1271,7 +1271,7 @@ export default function ControlPanel({
               if (body.hasAttribute("theme-mode")) {
                 body.setAttribute("theme-mode", "dark");
               }
-              localStorage.setItem("theme", "dark");
+              localStorage.setItem("drawdb-theme", "dark");
               setSettings((prev) => ({ ...prev, mode: "dark" }));
             },
           },
@@ -1342,18 +1342,9 @@ export default function ControlPanel({
     },
     help: {
       shortcuts: {
-        function: () => window.open("/shortcuts", "_blank"),
+        function: () => setModal(MODAL.SHORTCUTS),
         shortcut: "Ctrl+H",
-      },
-      ask_on_discord: {
-        function: () => window.open("https://discord.gg/BrjZgNrmR6", "_blank"),
-      },
-      report_bug: {
-        function: () => window.open("/bug-report", "_blank"),
-      },
-      feedback: {
-        function: () => window.open("/survey", "_blank"),
-      },
+      }
     },
   };
 
@@ -1396,17 +1387,6 @@ export default function ControlPanel({
             style={isRtl(i18n.language) ? { direction: "rtl" } : {}}
           >
             {header()}
-            {window.name.split(" ")[0] !== "t" && (
-              <Button
-                type="primary"
-                className="text-base me-2 pe-6 ps-5 py-[18px] rounded-md"
-                size="default"
-                icon={<IconShareStroked />}
-                onClick={() => setModal(MODAL.SHARE)}
-              >
-                {t("share")}
-              </Button>
-            )}
           </div>
         )}
         {layout.toolbar && toolbar()}

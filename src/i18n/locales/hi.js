@@ -67,7 +67,6 @@ const hindi = {
       storage_flushed: "स्टोरेज साफ़ किया गया",
       help: "मदद",
       shortcuts: "शॉर्टकट्स",
-      ask_on_discord: "हमसे Discord पर पूछें",
       feedback: "फीडबॅक",
       no_changes: "कोई बदलाव नहीं",
       loading: "लोड हो रहा है...",

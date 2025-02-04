@@ -32,12 +32,12 @@ import ImportDiagram from "./ImportDiagram";
 import ImportSource from "./ImportSource";
 import SetTableWidth from "./SetTableWidth";
 import Language from "./Language";
-import Share from "./Share";
 import Code from "./Code";
 import { useTranslation } from "react-i18next";
 import { importSQL } from "../../../utils/importSQL";
 import { databases } from "../../../data/databases";
 import { isRtl } from "../../../i18n/utils/rtl";
+import Shortcuts from "./Shortcuts";
 
 export default function Modal({
   modal,
@@ -317,8 +317,8 @@ export default function Modal({
         return <SetTableWidth />;
       case MODAL.LANGUAGE:
         return <Language />;
-      case MODAL.SHARE:
-        return <Share title={title} setModal={setModal} />;
+        case MODAL.SHORTCUTS:
+          return <Shortcuts />;
       default:
         return <></>;
     }

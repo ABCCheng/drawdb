@@ -67,7 +67,6 @@ const da = {
     storage_flushed: "Lagring tømt",
     help: "Hjælp",
     shortcuts: "Genveje",
-    ask_on_discord: "Spørg os på Discord",
     feedback: "Feedback",
     no_changes: "Ingen ændringer",
     loading: "Loader...",

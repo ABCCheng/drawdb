@@ -24,7 +24,6 @@ import { useTranslation } from "react-i18next";
 import { databases } from "../data/databases";
 import { isRtl } from "../i18n/utils/rtl";
 import { useSearchParams } from "react-router-dom";
-import { octokit } from "../data/octokit";
 
 export const IdContext = createContext({ gistId: "" });
 
@@ -282,55 +281,6 @@ export default function WorkSpace() {
           if (selectedDb === "") setShowSelectDbModal(true);
         });
     };
-
-    const loadFromGist = async (shareId) => {
-      try {
-        const res = await octokit.request(`GET /gists/${shareId}`, {
-          gist_id: shareId,
-          headers: {
-            "X-GitHub-Api-Version": "2022-11-28",
-          },
-        });
-        const diagramSrc = res.data.files["share.json"].content;
-        const d = JSON.parse(diagramSrc);
-        setUndoStack([]);
-        setRedoStack([]);
-        setLoadedFromGistId(shareId);
-        setDatabase(d.database);
-        setTitle(d.title);
-        setTables(d.tables);
-        setRelationships(d.relationships);
-        setNotes(d.notes);
-        setAreas(d.subjectAreas);
-        setTransform(d.transform);
-        if (databases[d.database].hasTypes) {
-          setTypes(d.types ?? []);
-        }
-        if (databases[d.database].hasEnums) {
-          setEnums(d.enums ?? []);
-        }
-      } catch (e) {
-        console.log(e);
-        setSaveState(State.FAILED_TO_LOAD);
-      }
-    };
-
-    const shareId = searchParams.get("shareId");
-    if (shareId) {
-      const existingDiagram = await db.diagrams.get({
-        loadedFromGistId: shareId,
-      });
-
-      if (existingDiagram) {
-        window.name = "d " + existingDiagram.id;
-        setId(existingDiagram.id);
-      } else {
-        window.name = "";
-        setId(0);
-      }
-      await loadFromGist(shareId);
-      return;
-    }
 
     if (window.name === "") {
       await loadLatestDiagram();

@@ -74,7 +74,6 @@ const polish = {
       storage_flushed: "Pamięć wyczyszczona",
       help: "Pomoc",
       shortcuts: "Skróty",
-      ask_on_discord: "Zapytaj nas na Discordzie",
       feedback: "Opinie",
       no_changes: "Brak zmian",
       loading: "Ładowanie...",

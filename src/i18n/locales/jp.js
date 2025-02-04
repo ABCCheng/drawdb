@@ -71,7 +71,6 @@ const japanese = {
       storage_flushed: "ストレージが消去されました",
       help: "ヘルプ",
       shortcuts: "ショートカット",
-      ask_on_discord: "Discordで質問する",
       feedback: "フィードバック",
       no_changes: "変更なし",
       loading: "読み込み中...",
